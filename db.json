@@ -1,0 +1,92 @@
+{
+  "expenses": [
+    {
+      "id": "101",
+      "name": "BJs1",
+      "price": 55.45,
+      "remarks": "remarks 101",
+      "categoryId": 201,
+      "dateCreated": "1-1-2020",
+      "createdBy": 300,
+      "dateModified": "1-1-2020",
+      "modifiedBy": 300
+    },
+    {
+      "id": "102",
+      "name": "Burlington",
+      "price": 25.23,
+      "remarks": "remarks 101",
+      "categoryId": 202,
+      "dateCreated": "1-2-2020",
+      "createdBy": 310,
+      "dateModified": "1-2-2020",
+      "modifiedBy": 310
+    },
+    {
+      "id": "103",
+      "name": "Patels",
+      "price": 102,
+      "remarks": "remarks 103",
+      "categoryId": 201,
+      "dateCreated": "1-3-2020",
+      "createdBy": 300,
+      "dateModified": "1-3-2020",
+      "modifiedBy": 300
+    },
+    {
+      "id": "104",
+      "name": "Movie",
+      "price": 23.34,
+      "remarks": "remarks 104",
+      "categoryId": 203,
+      "dateCreated": "1-3-2020",
+      "createdBy": 300,
+      "dateModified": "1-3-2020",
+      "modifiedBy": 300
+    },
+    {
+      "id": "105",
+      "name": "Aldi",
+      "price": 18.45,
+      "remarks": "remarks 105",
+      "categoryId": 201,
+      "dateCreated": "1-14-2020",
+      "createdBy": 300,
+      "dateModified": "1-15-2020",
+      "modifiedBy": 300
+    }
+  ],
+  "categories": [
+    {
+      "id": 201,
+      "name": "Grocery",
+      "description": "Description goes here if any..",
+      "dateCreated": "1-1-2020",
+      "createdBy": 300,
+      "dateModified": "1-1-2020",
+      "modifiedBy": 300
+    },
+    {
+      "id": 202,
+      "name": "Dress",
+      "description": "Description goes here if any..",
+      "dateCreated": "1-2-2020",
+      "createdBy": 310,
+      "dateModified": "1-2-2020",
+      "modifiedBy": 310
+    },
+    {
+      "id": 203,
+      "name": "Entertainment",
+      "description": "Entertainment des goes here if any..",
+      "dateCreated": "1-3-2020",
+      "createdBy": 310,
+      "dateModified": "1-3-2020",
+      "modifiedBy": 310
+    }
+  ],
+  "users": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
