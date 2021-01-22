@@ -2,7 +2,7 @@
   "expenses": [
     {
       "id": "101",
-      "name": "BJs1",
+      "name": "BJs",
       "price": 55.45,
       "remarks": "remarks 101",
       "categoryId": 201,

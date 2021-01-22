@@ -1,17 +1,11 @@
-import React, { SyntheticEvent } from 'react';
+import { observer } from 'mobx-react-lite';
+import React, { useContext } from 'react';
 import { Button, Item, Label, Segment } from 'semantic-ui-react';
-import { IExpense } from '../../../app/models/expense';
+import ExpenseStore from "../../../app/stores/expenseStore";
 
-interface IProps {
-    expenses: IExpense[];
-    selectExpense: (id: string) => void;
-    editMode: boolean;
-    deleteExpense: (e: SyntheticEvent<HTMLButtonElement>, id: string) => void;
-    submitting: boolean;
-    target: string;
-}
-
-export const ExpenseList: React.FC<IProps> = ({ expenses, selectExpense, deleteExpense, submitting, target }) => {
+const ExpenseList: React.FC = () => {
+    const expenseStore = useContext(ExpenseStore);
+    const { expenses, selectExpense, submitting, deleteExpense, target } = expenseStore;
     return (
         <div>
             <Segment clearing>
@@ -52,3 +46,5 @@ export const ExpenseList: React.FC<IProps> = ({ expenses, selectExpense, deleteE
         </div>
     )
 }
+
+export default observer(ExpenseList);

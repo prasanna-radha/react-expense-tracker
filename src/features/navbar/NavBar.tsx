@@ -1,12 +1,10 @@
-import React from 'react';
+import { observer } from 'mobx-react-lite';
+import React, { useContext } from 'react';
 import { Button, Container, Icon, Menu } from 'semantic-ui-react';
+import ExpenseStore from "../../app/stores/expenseStore";
 
-interface IProps {
-  openCreateForm: () => void;
-  submitting: boolean;
-}
-
-const NavBar: React.FC<IProps> = ({ openCreateForm, submitting }) => {
+const NavBar: React.FC = () => {
+  const expenseStore = useContext(ExpenseStore);
   return (
     <Menu fixed="top" inverted>
       <Container>
@@ -17,7 +15,7 @@ const NavBar: React.FC<IProps> = ({ openCreateForm, submitting }) => {
         <Menu.Item name='Expenses' />
         <Menu.Item>
           <Button
-            onClick={openCreateForm}
+            onClick={expenseStore.openCreateForm}
             positive
             content="Create Expense" >
           </Button>
@@ -27,4 +25,4 @@ const NavBar: React.FC<IProps> = ({ openCreateForm, submitting }) => {
   );
 };
 
-export default NavBar;
+export default observer(NavBar);

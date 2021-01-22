@@ -1,22 +1,16 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useContext } from 'react';
 import { Button, Form, Segment } from 'semantic-ui-react';
 import { IExpense } from '../../../app/models/expense';
 import { v4 as uuid } from "uuid";
+import ExpenseStore from "../../../app/stores/expenseStore";
 
 interface IProps {
     expense: IExpense;
-    setEditMode: (editMode: boolean) => void;
-    createExpense: (expense: IExpense) => void;
-    editExpense: (expense: IExpense) => void;
-    submitting: boolean;
 }
 
 export const ExpenseForm: React.FC<IProps> = ({
     expense: initialFormState,
-    setEditMode,
-    createExpense,
-    editExpense,
-    submitting }) => {
+}) => {
 
     const initializeForm = () => {
         if (initialFormState) {
@@ -54,7 +48,8 @@ export const ExpenseForm: React.FC<IProps> = ({
             editExpense(expense);
         }
     };
-
+    const expenseStore = useContext(ExpenseStore);
+    const { createExpense, editExpense, submitting } = expenseStore;
     return (
         <Segment clearing>
             <Form onSubmit={handleSubmit}>
@@ -98,7 +93,7 @@ export const ExpenseForm: React.FC<IProps> = ({
                     floated="right"
                     type="button"
                     content="Cancel"
-                    onClick={() => setEditMode(false)}
+                    onClick={() => expenseStore.editMode = false}
                 ></Button>
 
             </Form>
